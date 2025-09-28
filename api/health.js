@@ -25,9 +25,15 @@ export default function handler(req, res) {
     let data = "";
     response.on("data", chunk => data += chunk);
     response.on("end", () => {
+      let snippet = "";
+      try {
+        snippet = JSON.stringify(JSON.parse(data),null,2);
+      } catch {
+        snippet = data.slice(0,200);
+      }
       res.status(200).json({
         statusCode: response.statusCode,
-        message: response.statusCode >= 200 && response.statusCode < 300 ? "✅ API is healthy" : "⚠️ API might be down",
+        message: response.statusCode >= 200 && response.statusCode < 300 ? "API is healthy" : "API might be down",
         snippet: data.slice(0, 200)
       });
     });
