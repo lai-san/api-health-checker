@@ -17,7 +17,7 @@
       try {
         const res = await fetch(`/api/health?url=${encodeURIComponent(url)}`);
         const data = await res.json();
-        let output = 'Status Code: ${data.statusCode}\n${data.message}\n\nResponse Snippet:\n${data.snippet}`;
+        let output = 'Status Code: ${data.statusCode}\n${data.message}\n\nResponse Snippet:\n${data.snippet}';
         document.getElementById("result").textContent = output;
       } catch (err) {
         document.getElementById("result").textContent = "Error: " + err.message;
