@@ -1,8 +1,9 @@
 // health-check.js 
+require("dotenv").config();
 const https = require("https"); 
 
 const url = "https://api.openai.com/v1/models"; 
-const apikey = "sk-proj-fakekey";
+const apikey = process.env.OPENAI_API_KEY;
 
 const options = { 
 method: "GET", 
