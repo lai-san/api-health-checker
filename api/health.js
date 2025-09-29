@@ -2,6 +2,7 @@ const https = require("https");
 
 export default function handler(req, res) {
   const userUrl = req.query.url;
+  console.log('You have input url', userUrl);
   if (!userUrl) return res.status(400).json({ error: "Missing URL" });
 
   let options;
@@ -29,6 +30,7 @@ export default function handler(req, res) {
       try {
         snippet = JSON.stringify(JSON.parse(data),null,2);
       } catch {
+        console.log('This error');
         snippet = data.slice(0,200);
       }
       res.status(200).json({
