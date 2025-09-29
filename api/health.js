@@ -1,5 +1,4 @@
-const https = require("https");
-
+import https from 'https';
 export default function handler(req, res) {
   const userUrl = req.query.url;
   console.log('You have input url', userUrl);

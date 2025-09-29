@@ -1,7 +1,6 @@
 {
   "name": "api-health-checker",
   "version": "1.0.0",
-  "type": "module",
   "engines": {
     "node" : "22.x"
   },
