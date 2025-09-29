@@ -1,21 +1,23 @@
-# API health checker
 
-A simple Node.js project to check the health of an API endpoint.
-This project currently supports checking the OpenAI API but can be adapted to other API
+# API Health Checker
+
+A simple Node.js project to check the health of Open AI API endpoint. Deployed on Vercel using serverless functions. 
+It accepts a target API URL via a GET request and returns the JSON response status code and body. 
+Environment variables are used to securely manage sensitive API keys (e.g., OpenAI API key).
 
 ## Features
+- Serverless deployment on [Vercel](https://vercel.com)
+- Secure environment variables (no hardcoded keys)
+- JSON response with health status and response body snippet
+- Supports GET  OpenAI endpoints
 
-- Sends a GET request to an API endpoint
-- Returns the HTTP status code
-- Indicates if the API is healthy or down.
-- Safe storage of API keys using a .env file
+## Live Demo
+[API Health Checker](https://api-health-checker-iota.vercel.app/api/health?url=https://api.openai.com/v1/models)
 
-## Prerequisites
+## Tech Stack
+Node.js (ES Modules)
+Vercel Serverless Functions
+Fetch API
 
-- Node.js v14+
-- npm (comes with Node.js)
-- OpenAI API key (Or any API key you want to test)
-
-## Setup
-
-Clone the repositary
+## Example 
+curl "https://api-health-checker-iota.vercel.app/api/health?url=https://api.openai.com/v1/models"
