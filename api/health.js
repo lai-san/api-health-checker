@@ -35,7 +35,7 @@ export default function handler(req, res) {
       res.status(200).json({
         statusCode: response.statusCode,
         message: response.statusCode >= 200 && response.statusCode < 300 ? "API is healthy" : "API might be down",
-        snippet: data.slice(0, 200)
+        snippet: data.slice(0, 5000)
       });
     });
   });
